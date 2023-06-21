@@ -1,0 +1,181 @@
+<nav class="bg-gray-900 border-gray-700">
+  <div
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+  >
+    <a href="/" class="flex items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-7 mr-2 bg-slate-100"
+        viewBox="0 0 24 24"
+      ><path
+          d="M4 16H20V5H4V16ZM13 18V20H17V22H7V20H11V18H2.9918C2.44405 18 2 17.5511 2 16.9925V4.00748C2 3.45107 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44892 22 4.00748V16.9925C22 17.5489 21.5447 18 21.0082 18H13Z"
+        ></path></svg>
+      <span
+        class="self-center text-2xl font-semibold whitespace-nowrap text-white"
+      >TechStore</span>
+    </a>
+
+    <button
+      id="button-drop"
+      type="button"
+      class="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-6 h-6"
+        aria-hidden="true"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      ><path
+          fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"
+        ></path></svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-drop">
+      <ul
+        class="flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700"
+      >
+
+        {{#if user}}
+          <li>
+            <a
+              href="/about"
+              class="block py-2 pl-3 pr-4 text-blue-500 rounded md:bg-transparent md:p-0 md:hover:text-white focus:text-white"
+              aria-current="page"
+            >About</a>
+          </li>
+          <li>
+            <a
+              href="/home"
+              class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 md:hover:text-blue-500 focus:text-white"
+              aria-current="page"
+            >Home</a>
+          </li>
+          {{#if admin}}
+            <li>
+              <button
+                id="button3-drop"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700"
+              >Manage users
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <svg
+                  class="w-5 h-5 ml-1"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                ><path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path></svg></button>
+              <!-- Dropdown menu -->
+              <div
+                id="navbar3-drop"
+                class="z-10 absolute hidden font-normal divide-y divide-gray-600 rounded-lg shadow w-44 md:w-28 bg-gray-700"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+
+                  <li>
+                    <a
+                      href="/api/users"
+                      class="block px-4 py-2 hover:bg-gray-600 hover:text-white"
+                    >View user</a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/api/users/search-user"
+                      class="block px-4 py-2 hover:bg-gray-600 hover:text-white"
+                    >Search users</a>
+                  </li>
+
+                </ul>
+
+              </div>
+            </li>
+
+          {{/if}}
+          <li>
+            <button
+              id="button2-drop"
+              data-dropdown-toggle="dropdownNavbar"
+              class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:p-0 md:w-auto text-white md:hover:text-blue-500 focus:text-white border-gray-700 hover:bg-gray-700"
+            >Options
+              <svg
+                class="w-5 h-5 ml-1"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              ><path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path></svg></button>
+            <!-- Dropdown menu -->
+            <div
+              id="navbar2-drop"
+              class="z-10 absolute hidden font-normal divide-y divide-gray-600 rounded-lg shadow w-44 md:w-28 bg-gray-700"
+            >
+              <ul
+                class="py-2 text-sm text-gray-400"
+                aria-labelledby="dropdownLargeButton"
+              >
+
+                <li>
+                  <a
+                    href="/api/products"
+                    class="block px-4 py-2 hover:bg-gray-600 hover:text-white"
+                  >View products</a>
+                </li>
+
+                <li>
+                  <a
+                    href="/api/products/search_product"
+                    class="block px-4 py-2 hover:bg-gray-600 hover:text-white"
+                  >Search Products</a>
+                </li>
+
+              </ul>
+              <div class="py-1">
+                <a
+                  href="/api/auth/logout"
+                  class="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-600"
+                >Sign out</a>
+              </div>
+            </div>
+          </li>
+        {{else}}
+          <li>
+            <a
+              href="/about"
+              class="block py-2 pl-3 pr-4 text-blue-500 rounded md:bg-transparent md:p-0 md:hover:text-white focus:text-white"
+              aria-current="page"
+            >About</a>
+          </li>
+          <li>
+            <a
+              href="/api/auth/signin"
+              class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white"
+            >Signin</a>
+          </li>
+          <li>
+            <a
+              href="/api/auth/signup"
+              class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white"
+            >Signup</a>
+          </li>
+
+        {{/if}}
+
+      </ul>
+    </div>
+  </div>
+</nav>

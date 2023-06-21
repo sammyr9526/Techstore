@@ -1,0 +1,70 @@
+<div class="text-center mt-4">
+  <h1
+    class="mb-4 text-centers text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white"
+  >Sign Up</h1>
+</div>
+<div class="lg:max-w-sm sm:max-w-xs m-auto mt-5 mb-5">
+  <form
+    action="signup"
+    method="post"
+    class="px-8 pt-6 pb-8 mb-4 bg-zinc-700 shadow-md rounded sm:w-full w-64 m-auto"
+  >
+    <div class="mb-4">
+
+      <label class="block text-zinc-300 text-sm font-bold mb-2">User Name</label>
+      <input
+        type="text"
+        name="username"
+        placeholder="bob123"
+        class="shadow appearance-none border-none rounded w-full py-2 px-3 bg-zinc-900 leading-tight focus:outline-none focus:shadow-outline text-white outline-none"
+        required
+        value="{{username}}"
+      />
+    </div>
+    <div class="mb-4">
+
+      <label class="block text-zinc-300 text-sm font-bold mb-2">Email</label>
+      <input
+        type="email"
+        name="email"
+        placeholder="youremail@company.ltd"
+        class="shadow appearance-none border-none rounded w-full py-2 px-3 bg-zinc-900 leading-tight focus:outline-none focus:shadow-outline text-white outline-none"
+        required
+        value="{{email}}"
+      />
+    </div>
+    <div class="mb-4">
+
+      <label class="block text-zinc-300 text-sm font-bold mb-2">Password</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="******"
+        autocomplete="on"
+        class="shadow appearance-none border-none rounded w-full py-2 px-3 bg-zinc-900 leading-tight focus:outline-none focus:shadow-outline text-white"
+        required
+        value="{{password}}"
+      />
+    </div>
+
+    <div class="mb-4">
+
+      <label class="block text-zinc-300 text-sm font-bold mb-2">Confirm Password</label>
+      <input
+        type="password"
+        name="confirm_password"
+        placeholder="******"
+        autocomplete="on"
+        class="shadow appearance-none border-none rounded w-full py-2 px-3 bg-zinc-900 leading-tight focus:outline-none focus:shadow-outline text-white"
+        required
+        value="{{confirm_password}}"
+      />
+    </div>
+    <button
+      type="submit"
+      class="p-2 w-full bg-indigo-500 text-white text-center font-semibold hover:bg-indigo-700"
+    >
+      Sign Up
+    </button>
+  </form>
+</div>

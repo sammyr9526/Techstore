@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/output.css" rel="stylesheet" />
+    <title>Products Company </title>
+  </head>
+  <body class="bg-gradient-to-r from-orange-200 to-amber-200  min-h-screen ">  
+    
+      {{>navigation}}
+      {{> messages}}
+       {{>errors}}
+    {{{body}}}
+    {{>footer}}
+    <script> 
+      
+       var  alert_del = document.querySelectorAll(".alert_del")
+      alert_del.forEach((x) =>  {
+      x.addEventListener("click", ()=>
+      x.parentElement.classList.add("hidden"))
+       }) 
+
+        const dropbutton = document.querySelector("#button-drop"); 
+        const navbar = document.querySelector("#navbar-drop");
+         dropbutton.addEventListener("click",() =>{ navbar.classList.toggle("hidden") });
+
+         const dropbutton2 = document.querySelector("#button2-drop"); 
+        const navbar2 = document.querySelector("#navbar2-drop");
+        dropbutton2.addEventListener("click",() =>{ navbar2.classList.toggle("hidden") });
+
+        const dropbutton3 = document.querySelector("#button3-drop"); 
+        const navbar3 = document.querySelector("#navbar3-drop");
+        dropbutton3.addEventListener("click",() =>{ navbar3.classList.toggle("hidden") });
+    </script>
+   
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<div class="text-center mt-6">
+  <h1
+    class="mb-4 text-centers text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white"
+  >Add new user</h1>
+</div>
+<div class="max-w-sm flew flex-col m-auto mt-5 mb-5">
+  <form
+    action="/api/users/add"
+    method="post"
+    class="max-w-sm md:w-full w-64 px-8 py-5 m-auto bg-zinc-700 shadow-md rounded text-zinc-300 text-center"
+  >
+    <p class="m-auto text-center mb-4 font-bold">Insert new user information</p>
+    <div class="m-auto mb-4">
+      <label for="" class="text-sm font-bold">Name</label>
+      <input
+        type="text"
+        class="block bg-zinc-900 text-zinc-300 border-none shadow rounded appearance-none py-2 px-3 w-full leading-tight focus:outline-none focus:shadow-outline outline-none mt-1"
+        name="username"
+      />
+    </div>
+    <div class="m-auto mb-4">
+      <label for="" class="text-sm font-bold mb-3">Email</label>
+      <input
+        type="text"
+        class="block bg-zinc-900 text-zinc-300 border-none shadow rounded appearance-none py-2 px-3 w-full leading-tight focus:outline-none focus:shadow-outline outline-none mt-2"
+        name="email"
+      />
+    </div>
+    <div class="m-auto text-center mb-4">
+      <label for="" class="text-sm font-bold mb-3">Password</label>
+
+      <div class="flex text-center">
+        <input
+          type="password"
+          class="flex bg-zinc-900 text-zinc-300 border-none shadow rounded appearance-none py-2 px-3 w-full leading-tight focus:outline-none focus:shadow-outline outline-none"
+          name="password"
+        />
+
+      </div>
+
+    </div>
+
+    <div class="m-auto text-center mb-4">
+      <label for="" class="text-sm font-bold mb-3">Confirm Password</label>
+
+      <div class="flex text-center">
+        <input
+          type="password"
+          class="flex bg-zinc-900 text-zinc-300 border-none shadow rounded appearance-none py-2 px-3 w-full leading-tight focus:outline-none focus:shadow-outline outline-none"
+          name="confirm_password"
+        />
+
+      </div>
+
+    </div>
+
+    <div class="m-auto text-center block mb-4">
+      <label for="" class="block text-sm font-bold mb-3">Select Role</label>
+      <select
+        name="roles"
+        class="text-sm rounded-lg block w-full p-2.5 bg-zinc-900 border-gray-600 placeholder-gray-400 text-zinc-300 focus:ring-slate-400 focus:border-white"
+      >
+        <option value="user">User</option>
+        <option value="moderator">Moderator</option>
+        <option value="admin">Admin</option>
+      </select>
+
+    </div>
+    <button
+      type="submit"
+      class="p-2 w-full bg-indigo-500 text-white text-center font-semibold hover:bg-indigo-700"
+    >
+      Add user
+    </button>
+  </form>
+</div>

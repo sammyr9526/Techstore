@@ -1,0 +1,70 @@
+<div class="text-center mt-4">
+  <h1
+    class="mb-4 text-centers md:text-4xl text-2xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white"
+  >Add new product </h1>
+</div>
+<div class="max-w-sm flew flex-col m-auto mt-5 mb-5">
+  <form
+    action="/api/products/add"
+    method="post"
+    class="max-w-sm md:w-full w-64 px-8 py-5 m-auto bg-zinc-700 shadow-md rounded text-zinc-300 text-center"
+  >
+    <p class="m-auto text-center mb-4 font-bold"></p>
+    <div class="m-auto mb-4">
+      <label class="text-sm font-bold"> Name</label>
+      <input
+        type="text"
+        class="block bg-zinc-900 text-zinc-300 border-none shadow rounded appearance-none py-2 px-3 w-full leading-tight focus:outline-none focus:shadow-outline outline-none mt-2"
+        name="name"
+        value="{{name}}"
+        required
+      />
+    </div>
+    <div class="m-auto mb-4">
+      <label for="" class="text-sm font-bold mb-3">Category</label>
+      <input
+        type="text"
+        class="block bg-zinc-900 text-zinc-300 border-none shadow rounded appearance-none py-2 px-3 w-full leading-tight focus:outline-none focus:shadow-outline outline-none mt-2"
+        name="category"
+        value="{{category}}"
+        required
+      />
+    </div>
+    <div class="m-auto text-center mb-4">
+      <label for="" class="text-sm font-bold mb-3">Price</label>
+
+      <div class="flex text-center">
+        <input
+          class="flex bg-zinc-900 text-zinc-300 border-none shadow rounded appearance-none py-2 px-3 w-40 md:w-full leading-tight focus:outline-none focus:shadow-outline outline-none"
+          name="price"
+          value="{{price}}"
+          type="number"
+          step="0.01"
+          required
+        />
+        <label
+          class="w-8 h-9 md:w-20 bg-indigo-500 text-white text-lg appearance-none"
+        >$</label>
+      </div>
+
+    </div>
+
+    <div class="m-auto text-center block mb-4">
+      <label for="" class="text-sm font-bold mb-3">Image URL</label>
+      <input
+        type="url"
+        class="block bg-zinc-900 text-zinc-300 border-none shadow rounded appearance-none py-2 px-3 w-full leading-tight focus:outline-none focus:shadow-outline outline-none mt-2"
+        name="imgURL"
+        value="{{imgURL}}"
+        required
+      />
+
+    </div>
+    <button
+      type="submit"
+      class="p-2 w-full bg-indigo-500 text-white text-center font-semibold hover:bg-indigo-700"
+    >
+      Add product
+    </button>
+  </form>
+</div>
