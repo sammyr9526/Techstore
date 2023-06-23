@@ -1,7 +1,7 @@
 import User from "../models/User";
 import Role from "../models/Role";
 import jwt from "jsonwebtoken";
-import SECRET from "../config";
+import { SECRET } from "../config";
 
 export const showUsers = async (req, res) => {
   const users = await User.find().lean();
@@ -20,7 +20,7 @@ export const createUser = async (req, res) => {
     errors.push({ text: "Password must have at least 4 characters" });
   }
   if (errors.length > 0) {
-    res.render("/api/users/signup", {
+    res.render("users/add-user", {
       errors,
       username,
       email,

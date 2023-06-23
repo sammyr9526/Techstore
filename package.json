@@ -4,15 +4,16 @@
   "description": " a simple api for products",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --out-dir build && ncp src/views build/views",
-    "dev": "nodemon  src/index.js --exec babel-node",
-    "start-tw": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
-    "start": "nodemon build/index.js"
+    "build": "babel src -d build && ncp src/views build/views && ncp tailwind.config.js build/tailwind.config.js",
+    "dev": "nodemon src/index.js --exec babel-node ",
+    "tailwind": "npx tailwindcss -i ./src/config/input.css -o ./src/output.css --watch",
+    "start": "nodemon src/index.js --exec babel-node"
   },
   "keywords": [],
   "author": "Sammyr Recuay Parra",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.22.5",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.6",

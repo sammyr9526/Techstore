@@ -1,7 +1,7 @@
 import User from "../models/User";
 import Role from "../models/Role";
 import jwt from "jsonwebtoken";
-import config from "../config";
+import { SECRET } from "../config";
 
 export const signUp = async (req, res) => {
   const { username, email, password, roles, confirm_password } = req.body;
@@ -15,7 +15,7 @@ export const signUp = async (req, res) => {
     errors.push({ text: "Password must have at least 4 characters" });
   }
   if (errors.length > 0) {
-    res.render("/api/users/signup", {
+    res.render("users/signup", {
       errors,
       username,
       email,
@@ -39,7 +39,7 @@ export const signUp = async (req, res) => {
     }
     const savedUser = await newUser.save();
 
-    const token = jwt.sign({ id: savedUser._id }, config.SECRET, {
+    const token = jwt.sign({ id: savedUser._id }, SECRET, {
       expiresIn: 86400, //24 hours
     });
 
