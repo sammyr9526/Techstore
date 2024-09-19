@@ -144,9 +144,10 @@
 
       {{/each}}
     </div>
-    <div class="m-auto grid md: lg:grid-cols-3 mt-24">
+  {{else}}
 
-      {{#each products}}
+    <div class="m-auto grid md: lg:grid-cols-3 mt-24">
+      {{#each product}}
 
         <div
           class="w-72 md:w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow mb-5 m-auto"

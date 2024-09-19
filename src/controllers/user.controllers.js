@@ -45,7 +45,8 @@ export const createUser = async (req, res) => {
         newUser.roles[2] = [foundRoles3._id];
       } else {
         if (roles === "moderator") {
-          newUser.roles[0] = [foundRoles1._id];
+          const foundRolesm = await Role.findOne({ name: "moderator" });
+          newUser.roles[0] = [foundRolesm._id];
           const foundRolesm2 = await Role.findOne({ name: "user" });
           newUser.roles[1] = [foundRolesm2._id];
         } else {
@@ -65,10 +66,15 @@ export const createUser = async (req, res) => {
     res.redirect("/api/users");
   }
 };
-
 export const updateUser = async (req, res) => {
   const user = await User.findById(req.params.id).lean();
-  if (user.username === "Sammyr" || user.username === req.user.username) {
+  if (
+    user.username === "Sammyr" ||
+    user.username === "req.user.username" ||
+    user.username === "Michael" ||
+    user.username === "Jim" ||
+    user.username === "David"
+  ) {
     req.flash("error_msg", " You can't change information of this user");
     res.redirect("/api/users");
   } else {
@@ -142,7 +148,10 @@ export const deleteUser = async (req, res) => {
   const userfound = await User.findById(req.params.id);
   if (
     userfound.username === "Sammyr" ||
-    userfound.username === req.user.username
+    userfound.username === req.user.username ||
+    userfound.username === "Michael" ||
+    userfound.username === "Jim" ||
+    userfound.username === "David"
   ) {
     req.flash("error_msg", " You can't delete this user");
     res.redirect("/api/users");

@@ -85,7 +85,6 @@ router.get(
   "/search_product",
   helpers.isAuthenticated,
   authJwt.verifyToken,
-  authJwt.checkRoles,
   (req, res) => {
     res.render("products/search-products");
   }
